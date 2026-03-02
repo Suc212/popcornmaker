@@ -4,7 +4,6 @@ import { useEffect, useMemo, useState } from 'react';
 import { useForm, useWatch } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { useSearchParams } from 'next/navigation';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 import { Button } from '@/components/ui/button';
@@ -51,7 +50,6 @@ export function OrderForm() {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [warning, setWarning] = useState<string | null>(null);
-  const searchParams = useSearchParams();
 
   const {
     register,
@@ -68,11 +66,12 @@ export function OrderForm() {
   const quantity = useWatch({ control, name: 'quantity' });
 
   useEffect(() => {
-    const quantityFromUrl = searchParams.get('qty');
+    const search = typeof window !== 'undefined' ? window.location.search : '';
+    const quantityFromUrl = new URLSearchParams(search).get('qty');
     if (quantityFromUrl && ALLOWED_QUANTITIES.has(quantityFromUrl)) {
       setValue('quantity', quantityFromUrl, { shouldValidate: true, shouldDirty: true });
     }
-  }, [searchParams, setValue]);
+  }, [setValue]);
 
   const priceDetails = useMemo(() => {
     const qty = parseInt(quantity) || 0;
