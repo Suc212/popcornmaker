@@ -41,7 +41,7 @@ export function Pricing() {
 
                 <a
                   href={`?qty=${offer.quantity}#order`}
-                  className="block w-full px-5 py-3 rounded-lg font-semibold transition-colors bg-amber-600 text-white hover:bg-amber-700 text-center"
+                  className="block w-full px-5 py-3 rounded-lg font-semibold transition-colors bg-slate-900 text-white hover:bg-slate-800 text-center"
                 >
                   Buy Now
                 </a>

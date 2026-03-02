@@ -53,10 +53,10 @@ export function Testimonials() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, idx) => (
-              <div key={idx} className="p-8 bg-gray-50 rounded-lg border border-gray-200 hover:border-amber-600 transition-all hover:shadow-lg">
+              <div key={idx} className="p-8 bg-gray-50 rounded-lg border border-gray-200 hover:border-slate-300 transition-all hover:shadow-sm">
                 <div className="flex gap-1 mb-6">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <span key={i} className="text-amber-500 text-lg">★</span>
+                    <span key={i} className="text-slate-600 text-lg">★</span>
                   ))}
                 </div>
                 <p className="text-gray-700 mb-8 leading-relaxed text-lg">
@@ -86,11 +86,11 @@ export function Testimonials() {
             {faqs.map((faq, idx) => (
               <details
                 key={idx}
-                className="border border-gray-200 rounded-lg overflow-hidden transition-all hover:border-amber-600 bg-white group"
+                className="border border-gray-200 rounded-lg overflow-hidden transition-all hover:border-slate-300 bg-white group"
               >
                 <summary className="w-full p-6 flex items-center justify-between cursor-pointer list-none">
                   <div className="flex items-center gap-4">
-                    <span className="text-lg font-semibold text-amber-600">
+                    <span className="text-lg font-semibold text-slate-700">
                       {String(idx + 1).padStart(2, '0')}
                     </span>
                     <h3 className="text-lg font-semibold text-gray-900 text-left">

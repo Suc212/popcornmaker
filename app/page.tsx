@@ -8,7 +8,7 @@ import { Footer } from '@/components/footer';
 
 export default function Home() {
   return (
-    <main className="bg-white">
+    <main className="bg-gradient-to-b from-amber-50 via-orange-50/40 to-slate-100">
       <Hero />
       <Pricing />
       <Features />
@@ -16,7 +16,7 @@ export default function Home() {
       <Testimonials />
       
       {/* Order Section */}
-      <section id="order" className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section id="order" className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-orange-100/60 to-amber-50">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-center text-balance">
             Ready to Order?

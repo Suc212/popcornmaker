@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useForm, useWatch } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -31,11 +31,29 @@ const orderSchema = z.object({
 
 type OrderFormData = z.infer<typeof orderSchema>;
 const ALLOWED_QUANTITIES = new Set(['1', '2', '3', '4', '5', '10']);
+const ORDER_DEFAULT_VALUES: OrderFormData = {
+  name: '',
+  email: '',
+  phone: '',
+  whatsapp: '',
+  quantity: '',
+  address: '',
+};
+
+const ORDER_QUANTITY_OPTIONS = [
+  { value: '1', label: '1' },
+  { value: '2', label: '2' },
+  { value: '3', label: '3' },
+  { value: '4', label: '4' },
+  { value: '5', label: '5' },
+  { value: '10', label: '10+' },
+];
 
 export function OrderForm() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [warning, setWarning] = useState<string | null>(null);
   const searchParams = useSearchParams();
 
   const {
@@ -47,6 +65,7 @@ export function OrderForm() {
     setValue,
   } = useForm<OrderFormData>({
     resolver: zodResolver(orderSchema),
+    defaultValues: ORDER_DEFAULT_VALUES,
   });
 
   const quantity = useWatch({ control, name: 'quantity' });
@@ -58,7 +77,7 @@ export function OrderForm() {
     }
   }, [searchParams, setValue]);
 
-  const calculatePrice = () => {
+  const priceDetails = useMemo(() => {
     const qty = parseInt(quantity) || 0;
     const pricing = TIERED_PRICES[qty as keyof typeof TIERED_PRICES];
     if (pricing) {
@@ -69,11 +88,12 @@ export function OrderForm() {
       };
     }
     return null;
-  };
+  }, [quantity]);
 
   const onSubmit = async (data: OrderFormData) => {
     setLoading(true);
     setError(null);
+    setWarning(null);
 
     try {
       // Calculate total price
@@ -83,23 +103,37 @@ export function OrderForm() {
         throw new Error('Invalid quantity selected');
       }
 
-      // Add order to Firestore
-      const ordersRef = collection(db, 'orders');
-      const docRef = await addDoc(ordersRef, {
-        name: data.name,
-        email: data.email || null,
-        phone: data.phone,
-        whatsapp: data.whatsapp || null,
-        quantity: qty,
-        address: data.address,
-        totalPrice: pricing.discounted,
-        originalPrice: pricing.original,
-        currency: 'GHS',
-        status: 'pending',
-        createdAt: serverTimestamp(),
-      });
+      let orderId = `ORD-${Date.now()}`;
 
-      const orderId = docRef.id;
+      // Try to save to Firestore, but do not block email sending if rules reject write.
+      try {
+        const ordersRef = collection(db, 'orders');
+        const docRef = await addDoc(ordersRef, {
+          name: data.name,
+          email: data.email || null,
+          phone: data.phone,
+          whatsapp: data.whatsapp || null,
+          quantity: qty,
+          address: data.address,
+          totalPrice: pricing.discounted,
+          originalPrice: pricing.original,
+          currency: 'GHS',
+          status: 'pending',
+          createdAt: serverTimestamp(),
+        });
+        orderId = docRef.id;
+      } catch (firestoreError) {
+        const message =
+          firestoreError instanceof Error ? firestoreError.message : 'Unknown Firestore error';
+        console.error('Firestore save error:', firestoreError);
+        if (message.toLowerCase().includes('missing or insufficient permissions')) {
+          setWarning(
+            'Order message sent, but Firestore blocked saving the order. Update Firestore rules to allow writes.'
+          );
+        } else {
+          setWarning('Order message sent, but database save failed.');
+        }
+      }
 
       // Send email notification
       const emailResponse = await fetch('/api/send-order-email', {
@@ -118,7 +152,8 @@ export function OrderForm() {
       });
 
       if (!emailResponse.ok) {
-        throw new Error('Failed to send order notification');
+        const emailError = await emailResponse.json().catch(() => null);
+        throw new Error(emailError?.error || 'Failed to send order notification');
       }
 
       setSuccess(true);
@@ -133,7 +168,7 @@ export function OrderForm() {
   };
 
   return (
-    <Card className="w-full max-w-md mx-auto p-8 bg-white border border-gray-200">
+    <Card className="w-full max-w-md mx-auto p-8 bg-gradient-to-br from-white via-amber-50 to-orange-50 border border-amber-200 shadow-xl shadow-amber-100/50">
       {success && (
         <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
           <p className="text-green-800 text-sm font-medium">
@@ -147,17 +182,22 @@ export function OrderForm() {
           <p className="text-red-800 text-sm font-medium">{error}</p>
         </div>
       )}
+      {warning && (
+        <div className="mb-6 p-4 bg-amber-50 border border-amber-200 rounded-lg">
+          <p className="text-amber-800 text-sm font-medium">{warning}</p>
+        </div>
+      )}
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <div>
-          <label className="block text-sm font-medium text-gray-900 mb-1">
+          <label className="block text-sm font-medium text-slate-800 mb-1">
             Full Name
           </label>
           <input
             type="text"
             placeholder="John Doe"
             {...register('name')}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent"
+            className="w-full px-4 py-2 border border-amber-200 bg-white/95 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
           />
           {errors.name && (
             <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>
@@ -165,14 +205,14 @@ export function OrderForm() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-900 mb-1">
+          <label className="block text-sm font-medium text-slate-800 mb-1">
             Email (Optional)
           </label>
           <input
             type="email"
             placeholder="your@email.com"
             {...register('email')}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent"
+            className="w-full px-4 py-2 border border-amber-200 bg-white/95 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
           />
           {errors.email && (
             <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>
@@ -180,14 +220,14 @@ export function OrderForm() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-900 mb-1">
+          <label className="block text-sm font-medium text-slate-800 mb-1">
             Phone
           </label>
           <input
             type="tel"
             placeholder="024 123 4567"
             {...register('phone')}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent"
+            className="w-full px-4 py-2 border border-amber-200 bg-white/95 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
           />
           {errors.phone && (
             <p className="text-red-500 text-xs mt-1">{errors.phone.message}</p>
@@ -195,14 +235,14 @@ export function OrderForm() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-900 mb-1">
+          <label className="block text-sm font-medium text-slate-800 mb-1">
             WhatsApp Number (Optional)
           </label>
           <input
             type="tel"
             placeholder="024 123 4567"
             {...register('whatsapp')}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent"
+            className="w-full px-4 py-2 border border-amber-200 bg-white/95 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
           />
           {errors.whatsapp && (
             <p className="text-red-500 text-xs mt-1">{errors.whatsapp.message}</p>
@@ -210,20 +250,19 @@ export function OrderForm() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-900 mb-1">
+          <label className="block text-sm font-medium text-slate-800 mb-1">
             Quantity
           </label>
           <select
             {...register('quantity')}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent"
+            className="w-full px-4 py-2 border border-amber-200 bg-white/95 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
           >
             <option value="">Choose quantity</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="10">10+</option>
+            {ORDER_QUANTITY_OPTIONS.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
           </select>
           {errors.quantity && (
             <p className="text-red-500 text-xs mt-1">{errors.quantity.message}</p>
@@ -231,33 +270,33 @@ export function OrderForm() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-900 mb-1">
+          <label className="block text-sm font-medium text-slate-800 mb-1">
             Delivery Address
           </label>
           <input
             type="text"
             placeholder="Your delivery address"
             {...register('address')}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent"
+            className="w-full px-4 py-2 border border-amber-200 bg-white/95 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
           />
           {errors.address && (
             <p className="text-red-500 text-xs mt-1">{errors.address.message}</p>
           )}
         </div>
 
-        {calculatePrice() && (
-          <div className="p-4 bg-amber-50 rounded-lg border border-amber-200">
+        {priceDetails && (
+          <div className="p-4 bg-white/80 rounded-lg border border-orange-200">
             <p className="text-sm text-gray-600 mb-2">Your Price</p>
             <div className="flex items-end gap-3">
-              <p className="text-3xl font-bold text-amber-700">
-                ₵{calculatePrice()?.discounted}
+              <p className="text-3xl font-bold text-slate-900">
+                ₵{priceDetails.discounted}
               </p>
               <div className="mb-1">
                 <p className="text-sm line-through text-gray-500">
-                  ₵{calculatePrice()?.original}
+                  ₵{priceDetails.original}
                 </p>
-                <p className="text-xs font-semibold text-red-600">
-                  Save {calculatePrice()?.discount}%
+                <p className="text-xs font-semibold text-slate-600">
+                  Save {priceDetails.discount}%
                 </p>
               </div>
             </div>
@@ -267,7 +306,7 @@ export function OrderForm() {
         <Button
           type="submit"
           disabled={loading}
-          className="w-full bg-amber-600 hover:bg-amber-700 text-white font-medium py-2 rounded-lg transition-colors"
+          className="w-full bg-slate-900 hover:bg-slate-800 text-white font-medium py-2 rounded-lg transition-colors"
         >
           {loading ? 'Placing Order...' : 'Place Order'}
         </Button>

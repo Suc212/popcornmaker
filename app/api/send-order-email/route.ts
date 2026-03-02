@@ -1,8 +1,6 @@
 import { Resend } from 'resend';
 import { NextRequest, NextResponse } from 'next/server';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 interface OrderData {
   name: string;
   email?: string;
@@ -17,6 +15,21 @@ interface OrderData {
 
 export async function POST(request: NextRequest) {
   try {
+    const resendApiKey = process.env.RESEND_API_KEY;
+    const fromEmail = process.env.RESEND_FROM_EMAIL;
+    const toEmail = process.env.RESEND_TO_EMAIL;
+
+    if (!resendApiKey || !fromEmail || !toEmail) {
+      return NextResponse.json(
+        {
+          error:
+            'Missing email configuration. Required: RESEND_API_KEY, RESEND_FROM_EMAIL, RESEND_TO_EMAIL',
+        },
+        { status: 500 }
+      );
+    }
+
+    const resend = new Resend(resendApiKey);
     const orderData: OrderData = await request.json();
     const customerEmail = orderData.email?.trim();
     const shippingAddress = [orderData.address, orderData.city, orderData.zipCode]
@@ -25,8 +38,8 @@ export async function POST(request: NextRequest) {
 
     // Send email to admin
     await resend.emails.send({
-      from: 'onboarding@resend.dev',
-      to: 'allthegoodthings14@gmail.com',
+      from: fromEmail,
+      to: toEmail,
       subject: `New Mini Popcorn Maker Order - ${orderData.orderId}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -50,7 +63,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error('Error sending email:', error);
     return NextResponse.json(
-      { error: 'Failed to send email' },
+      { error: error instanceof Error ? error.message : 'Failed to send email' },
       { status: 500 }
     );
   }

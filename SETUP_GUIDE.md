@@ -44,6 +44,8 @@ NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_project_id.appspot.com
 NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
 NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
 RESEND_API_KEY=your_resend_api_key_here
+RESEND_FROM_EMAIL="Your Store <onboarding@resend.dev>"
+RESEND_TO_EMAIL=your_admin_email@example.com
 ```
 
 ## Project Structure
