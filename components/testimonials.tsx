@@ -2,11 +2,11 @@ export function Testimonials() {
   const faqs = [
     {
       question: 'Is oil really needed for popcorn?',
-      answer: 'No! Our Mini Popcorn Maker uses advanced heating technology to pop kernels perfectly without any oil. It\'s completely healthy and delivers amazing flavor through proper heat distribution.',
+      answer: 'No. Our Mini Popcorn Maker uses hot-air heating to pop kernels without oil, giving you crisp popcorn for easy, laid-back snacking.',
     },
     {
       question: 'How long does it take to make popcorn?',
-      answer: 'Just 2-3 minutes! Pour your kernels, press start, and enjoy fresh popcorn in moments. It\'s the perfect solution for quick, healthy snacking.',
+      answer: 'Just 2-3 minutes. Pour your kernels, press start, and enjoy fresh popcorn fast, perfect for relaxed breaks and movie nights.',
     },
     {
       question: 'Is it easy to clean?',
@@ -79,7 +79,7 @@ export function Testimonials() {
             Questions About Leisure
           </h2>
           <p className="text-xl text-gray-600 mb-16 text-balance">
-            Everything you need to know about your lifestyle upgrade
+            Everything you need to know about your leisure upgrade
           </p>
 
           <div className="space-y-4">

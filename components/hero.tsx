@@ -17,9 +17,12 @@ export function Hero() {
                 className="w-full h-auto max-w-sm sm:max-w-md object-contain"
               />
             </div>
+            <p className="text-center text-sm sm:text-base font-semibold uppercase tracking-wide text-slate-700 mb-4">
+              Mini Popcorn Maker
+            </p>
 
             <p className="text-lg md:text-xl text-slate-600 mb-6 text-balance leading-relaxed">
-              No oil needed, just add the corn and plug it in.
+              Your laid-back snack time starts here. No oil needed, just add the corn and plug it in.
             </p>
           
             <div className="flex flex-col sm:flex-row gap-4">

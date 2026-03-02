@@ -7,7 +7,7 @@ export function HowItWorks() {
             Your Leisure Simplified
           </h2>
           <p className="text-xl text-slate-600 text-balance max-w-3xl">
-            Three simple steps to pure, healthy snacking. No complexity. Just leisure.
+            Three simple steps to warm, fresh popcorn and a more relaxed evening. No complexity. Just leisure.
           </p>
         </div>
 
@@ -53,7 +53,7 @@ export function HowItWorks() {
               </div>
               <h3 className="text-2xl font-bold mb-3">Enjoy Your Leisure</h3>
               <p className="text-slate-600 leading-relaxed">
-                Fresh, healthy popcorn ready in minutes. Your moment of pure calm awaits. No oils, just pure enjoyment.
+                Fresh popcorn ready in minutes. Your moment of calm awaits. No oils, just pure enjoyment.
               </p>
             </div>
           </div>

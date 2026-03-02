@@ -8,10 +8,10 @@ export function Features() {
             {/* Left: Text */}
             <div>
               <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 text-balance">
-                A Cleaner Lifestyle
+                A Leisure Lifestyle
               </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Transform the way you snack. Our Mini Popcorn Maker delivers pure, healthy popcorn without oils or additives—making every moment of leisure guilt-free.
+                Transform the way you unwind. Our Mini Popcorn Maker delivers hot popcorn without oil or additives, so every break feels easy, light, and relaxing.
               </p>
               <a
                 href="?qty=1#order"
@@ -64,7 +64,7 @@ export function Features() {
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Zero Oil</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Guilt-free snacking. No hidden oils, no unnecessary calories. Pure, clean leisure for your wellness journey.
+                    Clean popping with no added oil. Just the crunch you want for movie nights and laid-back evenings.
                   </p>
                 </div>
 
@@ -84,7 +84,7 @@ export function Features() {
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Total Control</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Choose your ingredients. Control what goes into your snack. Make wellness choices that matter.
+                    Choose your kernels and finish with your favorite seasonings. Your taste, your mood, your moment.
                   </p>
                 </div>
 

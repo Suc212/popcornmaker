@@ -30,13 +30,13 @@ const orderSchema = z.object({
 });
 
 type OrderFormData = z.infer<typeof orderSchema>;
-const ALLOWED_QUANTITIES = new Set(['1', '2', '3', '4', '5', '10']);
+const ALLOWED_QUANTITIES = new Set(['1', '2', '3']);
 const ORDER_DEFAULT_VALUES: OrderFormData = {
   name: '',
   email: '',
   phone: '',
   whatsapp: '',
-  quantity: '',
+  quantity: '1',
   address: '',
 };
 
@@ -44,9 +44,6 @@ const ORDER_QUANTITY_OPTIONS = [
   { value: '1', label: '1' },
   { value: '2', label: '2' },
   { value: '3', label: '3' },
-  { value: '4', label: '4' },
-  { value: '5', label: '5' },
-  { value: '10', label: '10+' },
 ];
 
 export function OrderForm() {

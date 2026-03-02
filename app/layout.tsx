@@ -8,7 +8,7 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: 'Mini Popcorn Maker - Perfect Snacking at Home',
-  description: 'Compact, powerful popcorn maker for perfect snacking. Easy to use, easy to clean. Order yours today!',
+  description: 'Compact popcorn maker for relaxed snacking at home. Easy to use, easy to clean, and ready in minutes.',
   generator: 'v0.app',
   icons: {
     icon: [
