@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { Hero } from '@/components/hero';
 import { Features } from '@/components/features';
 import { HowItWorks } from '@/components/how-it-works';
@@ -24,7 +25,9 @@ export default function Home() {
           <p className="text-lg text-gray-600 text-center mb-12 text-balance">
             Fill out the form below and we'll get your Mini Popcorn Maker to you soon.
           </p>
-          <OrderForm />
+          <Suspense fallback={<div className="text-center text-sm text-gray-600">Loading order form...</div>}>
+            <OrderForm />
+          </Suspense>
         </div>
       </section>
 
