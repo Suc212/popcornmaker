@@ -107,7 +107,7 @@ export function OrderForm() {
 
       // Try to save to Firestore, but do not block email sending if rules reject write.
       try {
-        const ordersRef = collection(db, 'orders');
+        const ordersRef = collection(db, 'popcorn_orders');
         const docRef = await addDoc(ordersRef, {
           name: data.name,
           email: data.email || null,

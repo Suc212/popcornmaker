@@ -13,7 +13,7 @@ interface OrderData {
   orderId: string;
 }
 
-export async function POST(request: NextRequest) {
+export async function POST(request: NextRequest) {  
   try {
     const resendApiKey = process.env.RESEND_API_KEY;
     const fromEmail = process.env.RESEND_FROM_EMAIL;
