@@ -1,20 +1,24 @@
 export function Testimonials() {
   const faqs = [
     {
-      question: 'Is oil really needed for popcorn?',
-      answer: 'No. Our Mini Popcorn Maker uses hot-air heating to pop kernels without oil, giving you crisp popcorn for easy, laid-back snacking.',
+      question: 'Is it really worth it for just popcorn?',
+      answer: 'If you snack often, it pays for itself quickly. Most buyers say it becomes part of their weekly routine after the first few uses.',
     },
     {
-      question: 'How long does it take to make popcorn?',
-      answer: 'Just 2-3 minutes. Pour your kernels, press start, and enjoy fresh popcorn fast, perfect for relaxed breaks and movie nights.',
+      question: 'How big are the batches?',
+      answer: 'It pops a personal-to-sharing-sized batch in about 3 minutes, ideal for 1-3 people. You can pop another batch immediately.',
     },
     {
-      question: 'Is it easy to clean?',
-      answer: 'Absolutely. The removable parts make cleanup effortless. Rinse, dry, and you\'re ready for your next leisure moment. No mess, no complicated parts.',
+      question: 'Is it loud?',
+      answer: 'The popping sound is part of the fun. The machine runs around the level of a hair dryer and finishes quickly.',
     },
     {
-      question: 'Can I customize my popcorn?',
-      answer: 'Yes! With no oil requirement, you control everything. Use your favorite kernels, add your preferred seasonings after—complete control for your perfect snack.',
+      question: 'What if I do not like it?',
+      answer: 'No stress. You are covered by a 30-day money-back guarantee.',
+    },
+    {
+      question: 'How long does delivery take in Ghana?',
+      answer: 'Most deliveries arrive in 2-5 business days. You will receive confirmation and shipping updates after your order.',
     },
   ];
 
@@ -22,19 +26,19 @@ export function Testimonials() {
     {
       name: 'Ama Owusu',
       role: 'Accra, Ghana',
-      text: 'This popcorn maker is easy to use and works consistently. My family uses it on weekends, and cleanup is quick.',
+      text: 'I bought this for movie nights and now we use it almost every evening. Fast, easy, and way better than microwave popcorn.',
       rating: 5,
     },
     {
       name: 'Kwame Boateng',
       role: 'Kumasi, Ghana',
-      text: 'It makes popcorn in a few minutes and does not require oil. It has been a practical addition to our home.',
+      text: 'I was skeptical at first, but the 3-minute pop time is real. It has become our go-to snack maker at home.',
       rating: 5,
     },
     {
       name: 'Abena Mensah',
       role: 'Takoradi, Ghana',
-      text: 'I bought it for family gatherings, and it has been reliable so far. The portion size is good for small groups.',
+      text: 'I keep mine on my kitchen counter and everyone asks about it. Cleanup is quick and the taste is consistently great.',
       rating: 5,
     },
   ];
@@ -45,10 +49,12 @@ export function Testimonials() {
       <section className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 text-balance">
-            Loved by Our Community
+            They Bought It Skeptical.
+            <br />
+            Now They Cannot Stop.
           </h2>
           <p className="text-xl text-gray-600 mb-16 text-balance max-w-3xl">
-            Real people sharing their leisure moments
+            Real reviews from buyers across Ghana
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -76,10 +82,10 @@ export function Testimonials() {
       <section className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 text-balance">
-            Questions About Leisure
+            Got Questions?
           </h2>
           <p className="text-xl text-gray-600 mb-16 text-balance">
-            Everything you need to know about your leisure upgrade
+            We have heard them all.
           </p>
 
           <div className="space-y-4">

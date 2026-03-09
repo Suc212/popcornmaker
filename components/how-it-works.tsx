@@ -4,10 +4,10 @@ export function HowItWorks() {
       <div className="max-w-7xl mx-auto">
         <div className="mb-20">
           <h2 className="text-5xl md:text-6xl font-bold mb-6 text-balance">
-            Your Leisure Simplified
+            From kernels to crunch in 3 easy steps
           </h2>
           <p className="text-xl text-slate-600 text-balance max-w-3xl">
-            Three simple steps to warm, fresh popcorn and a more relaxed evening. No complexity. Just leisure.
+            Dead simple flow: fill, switch on, and enjoy. Perfect for movie nights, work breaks, and family hangouts.
           </p>
         </div>
 
@@ -26,34 +26,34 @@ export function HowItWorks() {
           <div className="grid grid-cols-1 gap-8">
             {/* Step 1 */}
             <div className="flex flex-col">
-              <div className="w-20 h-20 rounded-full bg-slate-800 flex items-center justify-center text-4xl text-white font-bold mb-6">
+              <div className="w-20 h-20 rounded-full bg-amber-700 flex items-center justify-center text-4xl text-white font-bold mb-6">
                 1
               </div>
-              <h3 className="text-2xl font-bold mb-3">Add Kernels</h3>
+              <h3 className="text-2xl font-bold mb-3">Fill the Chamber</h3>
               <p className="text-slate-600 leading-relaxed">
-                Measure 2/3 cup of popcorn kernels and pour into the container. Use only high-quality kernels for best results.
+                Add your popcorn kernels. A small scoop is enough for a personal-to-sharing-sized batch.
               </p>
             </div>
 
             {/* Step 2 */}
             <div className="flex flex-col">
-              <div className="w-20 h-20 rounded-full bg-slate-800 flex items-center justify-center text-4xl text-white font-bold mb-6">
+              <div className="w-20 h-20 rounded-full bg-amber-700 flex items-center justify-center text-4xl text-white font-bold mb-6">
                 2
               </div>
-              <h3 className="text-2xl font-bold mb-3">Place Measuring Cup & Start</h3>
+              <h3 className="text-2xl font-bold mb-3">Switch It On</h3>
               <p className="text-slate-600 leading-relaxed">
-                Place the measuring cup on top of the lid, butter side up. Press the button and let the magic happen for about 3 minutes.
+                Plug in, flip the switch, and let the hot-air system pop your batch in around 3 minutes.
               </p>
             </div>
 
             {/* Step 3 */}
             <div className="flex flex-col">
-              <div className="w-20 h-20 rounded-full bg-slate-800 flex items-center justify-center text-4xl text-white font-bold mb-6">
+              <div className="w-20 h-20 rounded-full bg-amber-700 flex items-center justify-center text-4xl text-white font-bold mb-6">
                 3
               </div>
-              <h3 className="text-2xl font-bold mb-3">Enjoy Your Leisure</h3>
+              <h3 className="text-2xl font-bold mb-3">Season and Enjoy</h3>
               <p className="text-slate-600 leading-relaxed">
-                Fresh popcorn ready in minutes. Your moment of calm awaits. No oils, just pure enjoyment.
+                Catch it in your bowl, add your favorite toppings, and enjoy a fresh snack on demand.
               </p>
             </div>
           </div>

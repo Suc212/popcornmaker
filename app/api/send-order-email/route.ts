@@ -11,6 +11,9 @@ interface OrderData {
   city?: string;
   zipCode?: string;
   orderId: string;
+  totalPrice?: number;
+  originalPrice?: number;
+  currency?: string;
 }
 
 export async function POST(request: NextRequest) {  
@@ -35,6 +38,9 @@ export async function POST(request: NextRequest) {
     const shippingAddress = [orderData.address, orderData.city, orderData.zipCode]
       .filter(Boolean)
       .join(', ');
+    const currency = orderData.currency || 'GHS';
+    const hasPrice = typeof orderData.totalPrice === 'number';
+    const priceLine = hasPrice ? `${currency} ${orderData.totalPrice}` : 'Not provided';
 
     // Send email to admin
     await resend.emails.send({
@@ -51,6 +57,7 @@ export async function POST(request: NextRequest) {
             <p><strong>Phone:</strong> ${orderData.phone}</p>
             <p><strong>WhatsApp:</strong> ${orderData.whatsapp || 'Not provided'}</p>
             <p><strong>Quantity:</strong> ${orderData.quantity}</p>
+            <p><strong>Price:</strong> ${priceLine}</p>
             <p><strong>Shipping Address:</strong><br />
             ${shippingAddress}</p>
           </div>

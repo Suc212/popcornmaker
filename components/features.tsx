@@ -8,16 +8,18 @@ export function Features() {
             {/* Left: Text */}
             <div>
               <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 text-balance">
-                A Leisure Lifestyle
+                Small machine.
+                <br />
+                Big personality.
               </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Transform the way you unwind. Our Mini Popcorn Maker delivers hot popcorn without oil or additives, so every break feels easy, light, and relaxing.
+                Fresh popcorn in about 3 minutes with no oil required. Built for compact kitchens, dorms, and offices across Ghana.
               </p>
               <a
                 href="?qty=1#order"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-amber-700 hover:bg-amber-800 text-white font-semibold rounded-lg transition-colors"
               >
-                <span>Buy Now</span>
+                <span>Order Now</span>
                 <span>→</span>
               </a>
             </div>
@@ -38,10 +40,10 @@ export function Features() {
       <section className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 text-balance">
-            Why Choose Us
+            Why Buyers Keep Choosing PopMini
           </h2>
           <p className="text-lg text-gray-600 mb-16 text-balance">
-            Every detail crafted for your leisure
+            Every detail designed for faster snacking and easier cleanup
           </p>
 
           {/* Image + Features Grid */}
@@ -59,42 +61,42 @@ export function Features() {
             <div className="lg:col-span-2">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="p-10 bg-white rounded-lg border border-gray-200 hover:border-slate-300 transition-all hover:shadow-sm">
-                  <div className="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center mb-6">
+                  <div className="w-12 h-12 bg-amber-700 rounded-full flex items-center justify-center mb-6">
                     <span className="text-white font-bold">①</span>
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Zero Oil</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">No Oil Needed</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Clean popping with no added oil. Just the crunch you want for movie nights and laid-back evenings.
+                    Hot-air popping keeps things lighter and lower-calorie while still giving you that crisp crunch, making it great for healthy diets.
                   </p>
                 </div>
 
                 <div className="p-10 bg-white rounded-lg border border-gray-200 hover:border-slate-300 transition-all hover:shadow-sm">
-                  <div className="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center mb-6">
+                  <div className="w-12 h-12 bg-amber-700 rounded-full flex items-center justify-center mb-6">
                     <span className="text-white font-bold">②</span>
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Moments of Calm</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready in 3 Minutes</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Creates perfect moments of peace. Quiet, reliable, and always ready when you need those moments of leisure.
+                    Pour kernels, switch on, and enjoy fresh popcorn fast without microwave bag smell.
                   </p>
                 </div>
 
                 <div className="p-10 bg-white rounded-lg border border-gray-200 hover:border-slate-300 transition-all hover:shadow-sm">
-                  <div className="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center mb-6">
+                  <div className="w-12 h-12 bg-amber-700 rounded-full flex items-center justify-center mb-6">
                     <span className="text-white font-bold">③</span>
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Total Control</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Compact and Countertop Friendly</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Choose your kernels and finish with your favorite seasonings. Your taste, your mood, your moment.
+                    Fits into smaller kitchens and office corners without taking over your space.
                   </p>
                 </div>
 
                 <div className="p-10 bg-white rounded-lg border border-gray-200 hover:border-slate-300 transition-all hover:shadow-sm">
-                  <div className="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center mb-6">
+                  <div className="w-12 h-12 bg-amber-700 rounded-full flex items-center justify-center mb-6">
                     <span className="text-white font-bold">④</span>
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Effortless Living</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Easy to Clean</h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Clean in seconds. More time to relax, less time cleaning. That's the leisure lifestyle.
+                    Removable parts and quick wipe-down cleanup mean less mess after every batch.
                   </p>
                 </div>
               </div>
