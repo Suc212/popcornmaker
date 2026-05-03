@@ -1,10 +1,8 @@
 export function Features() {
   return (
-    <>
-      {/* Main Feature Section */}
-      <section id="features" className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="features" className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left: Text */}
             <div>
               <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 text-balance">
@@ -34,31 +32,23 @@ export function Features() {
             </div>
           </div>
         </div>
-      </section>
+    </section>
+  );
+}
 
-      {/* Features Grid Section */}
+export function FeaturesGrid() {
+  return (
       <section className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 text-balance">
-            Why Buyers Keep Choosing PopMini
+            Why Everyone Loves PopMini
           </h2>
           <p className="text-lg text-gray-600 mb-16 text-balance">
             Every detail designed for faster snacking and easier cleanup
           </p>
 
-          {/* Image + Features Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-            {/* Left: Product Details Grid Image */}
-            <div className="flex items-center justify-center lg:col-span-1">
-              <img 
-                src="/images/product-details-grid.webp" 
-                alt="Detailed product components and quality"
-                className="w-full h-auto max-w-[220px] sm:max-w-xs object-contain"
-              />
-            </div>
-
-            {/* Right: Features */}
-            <div className="lg:col-span-2">
+          {/* Features */}
+          <div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="p-10 bg-white rounded-lg border border-gray-200 hover:border-slate-300 transition-all hover:shadow-sm">
                   <div className="w-12 h-12 bg-amber-700 rounded-full flex items-center justify-center mb-6">
@@ -101,9 +91,15 @@ export function Features() {
                 </div>
               </div>
             </div>
+
+          <div className="flex items-center justify-center mt-16">
+            <img 
+              src="/images/product-details-grid.webp" 
+              alt="Detailed product components and quality"
+              className="w-full h-auto max-w-[220px] sm:max-w-xs object-contain"
+            />
           </div>
         </div>
       </section>
-    </>
   );
 }

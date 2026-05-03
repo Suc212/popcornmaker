@@ -9,9 +9,6 @@ export function Hero() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 gap-10 items-center">
             <div className="text-slate-900 text-center">
-              <p className="inline-flex items-center px-4 py-2 rounded-full bg-amber-200 text-slate-900 text-xs sm:text-sm font-semibold uppercase tracking-wide mb-5">
-                As Seen On Social Media
-              </p>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-5 text-balance leading-tight">
                 Movie Night Just Got
                 <br />
@@ -26,7 +23,7 @@ export function Hero() {
                   href="?qty=1#order"
                   className="px-8 py-4 bg-amber-700 hover:bg-amber-800 text-white font-semibold rounded-full transition-colors text-lg text-center shadow-lg shadow-amber-700/25"
                 >
-                  Get Mine - Order Now
+                  I Want One - Order Now
                 </a>
                 <div className="flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm text-slate-600 font-medium">
                   <span>30-Day Money Back</span>

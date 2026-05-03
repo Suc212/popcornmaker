@@ -3,7 +3,7 @@ const SCENARIOS = [
     icon: '🎬',
     title: 'Movie Night Upgrade',
     description:
-      'Skip stale microwave bags. Pop a fresh batch while the opening credits roll.',
+      'Have popcorn ready in minutes while watching movies.',
   },
   {
     icon: '🎮',
@@ -15,7 +15,7 @@ const SCENARIOS = [
     icon: '👩‍💻',
     title: 'Work-From-Home Snack',
     description:
-      'Perfect for that 3PM break when you need a quick, satisfying boost.',
+      'Perfect for making the perfect work-from-home snack.',
   },
   {
     icon: '🎁',
@@ -27,7 +27,7 @@ const SCENARIOS = [
     icon: '👨‍👩‍👧',
     title: 'Family Fun',
     description:
-      'Let everyone watch kernels pop and enjoy a fresh shared snack together.',
+      'Bring everyone together over a warm, freshly popped bowl. Snacking is always better shared with family.',
   },
   {
     icon: '🌙',
@@ -45,7 +45,7 @@ export function Scenarios() {
           Made for every moment
         </p>
         <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-12 text-balance max-w-3xl">
-          You Will Find a Reason to Use It Every Day
+          Pop Mini Fits Into Every Moment
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">

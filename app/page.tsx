@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { Hero } from '@/components/hero';
 import { Scenarios } from '@/components/scenarios';
-import { Features } from '@/components/features';
+import { Features, FeaturesGrid } from '@/components/features';
 import { HowItWorks } from '@/components/how-it-works';
 import { Testimonials } from '@/components/testimonials';
 import { Pricing } from '@/components/pricing';
@@ -12,8 +12,9 @@ export default function Home() {
   return (
     <main className="bg-gradient-to-b from-amber-50 via-orange-50/40 to-slate-100 pb-20 md:pb-0">
       <Hero />
-      <Scenarios />
+      <FeaturesGrid />
       <Features />
+      <Scenarios />
       <HowItWorks />
       <Testimonials />
       <Pricing />
@@ -41,7 +42,7 @@ export default function Home() {
       <div className="md:hidden fixed bottom-0 inset-x-0 z-50 bg-white border-t border-amber-200 shadow-[0_-8px_24px_rgba(0,0,0,0.12)] px-4 py-3">
         <div className="max-w-2xl mx-auto flex items-center justify-between gap-3">
           <div>
-            <p className="text-base font-bold text-slate-900">₵600</p>
+            <p className="text-base font-bold text-slate-900">₵550</p>
             <p className="text-xs text-slate-500 line-through">₵800</p>
           </div>
           <a

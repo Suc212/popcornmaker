@@ -10,9 +10,9 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 
 const TIERED_PRICES = {
-  1: { discounted: 600, original: 750 },
-  2: { discounted: 1100, original: 1400 },
-  3: { discounted: 1500, original: 1950 },
+  1: { discounted: 550, original: 800 },
+  2: { discounted: 1000, original: 1600 },
+  3: { discounted: 1400, original: 2400 },
 };
 
 const orderSchema = z.object({

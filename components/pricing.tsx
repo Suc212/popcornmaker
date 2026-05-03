@@ -1,7 +1,7 @@
 const OFFERS = [
-  { quantity: '1', discounted: 600, original: 800, badge: 'Starter Pack' },
-  { quantity: '2', discounted: 1100, original: 1600, badge: 'Most Popular' },
-  { quantity: '3', discounted: 1500, original: 2400, badge: 'Best Value' },
+  { quantity: '1', discounted: 550, original: 800, badge: 'Starter Pack' },
+  { quantity: '2', discounted: 1000, original: 1600, badge: 'Most Popular' },
+  { quantity: '3', discounted: 1400, original: 2400, badge: 'Best Value' },
 ];
 
 export function Pricing() {
