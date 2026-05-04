@@ -25,8 +25,11 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-center text-balance">
             Your Snack Game Is About to Change
           </h2>
-          <p className="text-lg text-gray-600 text-center mb-12 text-balance">
-            Join buyers across Ghana enjoying fresh popcorn at home. Select your quantity and place your order below.
+          <p className="text-lg text-gray-600 text-center mb-3 text-balance">
+            Join happy customers across Ghana who enjoy popcorn the stress-free way. Fill the form below to complete your order.
+          </p>
+          <p className="text-base md:text-lg font-semibold text-green-700 text-center mb-12 text-balance">
+            Enjoy free shipping on all orders today, payment on delivery only in Accra.
           </p>
           <Suspense fallback={<div className="text-center text-sm text-gray-600">Loading order form...</div>}>
             <OrderForm />

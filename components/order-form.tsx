@@ -191,7 +191,7 @@ export function OrderForm() {
           </label>
           <input
             type="text"
-            placeholder="John Doe"
+            placeholder="Mensah Mensah"
             {...register('name')}
             className="w-full px-4 py-2 border border-amber-200 bg-white/95 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
           />

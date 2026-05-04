@@ -1,9 +1,12 @@
 export function Hero() {
   return (
     <section className="bg-gradient-to-b from-amber-100 via-orange-50 to-amber-50">
-      <div className="bg-red-600 text-white text-center text-xs sm:text-sm font-medium tracking-wide px-4 py-2">
+      <a
+        href="#order"
+        className="block bg-red-600 hover:bg-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-300 focus-visible:ring-offset-2 text-white text-center text-xs sm:text-sm font-medium tracking-wide px-4 py-2 transition-colors"
+      >
         <span className="font-bold">FREE SHIPPING</span> on all orders today · Limited stock available
-      </div>
+      </a>
 
       <div className="py-14 md:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
