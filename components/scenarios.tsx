@@ -52,7 +52,7 @@ export function Scenarios() {
           {SCENARIOS.map((scenario) => (
             <article
               key={scenario.title}
-              className="bg-white border border-amber-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow"
+              className="bg-white border border-amber-100 rounded-2xl p-6 shadow-sm"
             >
               <p className="text-4xl mb-3">{scenario.icon}</p>
               <h3 className="text-xl font-bold text-slate-900 mb-2">{scenario.title}</h3>

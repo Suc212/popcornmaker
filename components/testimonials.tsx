@@ -57,7 +57,7 @@ export function Testimonials() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, idx) => (
-              <div key={idx} className="p-8 bg-gray-50 rounded-lg border border-gray-200 hover:border-slate-300 transition-all hover:shadow-sm">
+              <div key={idx} className="p-8 bg-gray-50 rounded-lg border border-gray-200">
                 <div className="flex gap-1 mb-6">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <span key={i} className="text-slate-600 text-lg">★</span>
@@ -90,9 +90,9 @@ export function Testimonials() {
             {faqs.map((faq, idx) => (
               <details
                 key={idx}
-                className="border border-gray-200 rounded-lg overflow-hidden transition-all hover:border-slate-300 bg-white group"
+                className="border border-gray-200 rounded-lg overflow-hidden transition-colors bg-white group"
               >
-                <summary className="w-full p-6 flex items-center justify-between cursor-pointer list-none">
+                <summary className="w-full p-6 flex items-center justify-between cursor-pointer list-none transition-colors hover:bg-amber-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-inset">
                   <div className="flex items-center gap-4">
                     <span className="text-lg font-semibold text-slate-700">
                       {String(idx + 1).padStart(2, '0')}

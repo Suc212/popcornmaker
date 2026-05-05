@@ -3,7 +3,7 @@ export function Hero() {
     <section className="bg-gradient-to-b from-amber-100 via-orange-50 to-amber-50">
       <a
         href="#order"
-        className="block bg-red-600 hover:bg-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-300 focus-visible:ring-offset-2 text-white text-center text-xs sm:text-sm font-medium tracking-wide px-4 py-2 transition-colors"
+        className="block bg-red-600 hover:bg-red-700 active:bg-red-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-300 focus-visible:ring-offset-2 text-white text-center text-xs sm:text-sm font-medium tracking-wide px-4 py-2 transition-colors cursor-pointer"
       >
         <span className="font-bold">FREE SHIPPING</span> on all orders today · Limited stock available
       </a>
@@ -24,7 +24,7 @@ export function Hero() {
               <div className="flex flex-col items-center gap-3 mb-8">
                 <a
                   href="?qty=1#order"
-                  className="px-8 py-4 bg-amber-700 hover:bg-amber-800 text-white font-semibold rounded-full transition-colors text-lg text-center shadow-lg shadow-amber-700/25"
+                  className="px-8 py-4 bg-amber-700 hover:bg-amber-800 active:bg-amber-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2 text-white font-semibold rounded-full transition-colors text-lg text-center shadow-lg shadow-amber-700/25 cursor-pointer"
                 >
                   I Want One - Order Now
                 </a>

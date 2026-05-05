@@ -20,7 +20,7 @@ export default function Home() {
       <Pricing />
       
       {/* Order Section */}
-      <section id="order" className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-orange-100/60 to-amber-50">
+      <section id="order" className="scroll-mt-6 py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-orange-100/60 to-amber-50">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-center text-balance">
             Your Snack Game Is About to Change
@@ -50,7 +50,7 @@ export default function Home() {
           </div>
           <a
             href="?qty=1#order"
-            className="px-5 py-2.5 rounded-lg bg-amber-700 hover:bg-amber-800 text-white font-semibold text-sm transition-colors"
+            className="px-5 py-2.5 rounded-lg bg-amber-700 hover:bg-amber-800 active:bg-amber-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2 text-white font-semibold text-sm transition-colors cursor-pointer"
           >
             Order Now
           </a>

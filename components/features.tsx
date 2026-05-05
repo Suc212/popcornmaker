@@ -15,7 +15,7 @@ export function Features() {
               </p>
               <a
                 href="?qty=1#order"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-amber-700 hover:bg-amber-800 text-white font-semibold rounded-lg transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-amber-700 hover:bg-amber-800 active:bg-amber-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2 text-white font-semibold rounded-lg transition-colors cursor-pointer"
               >
                 <span>Order Now</span>
                 <span>→</span>
@@ -50,7 +50,7 @@ export function FeaturesGrid() {
           {/* Features */}
           <div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="p-10 bg-white rounded-lg border border-gray-200 hover:border-slate-300 transition-all hover:shadow-sm">
+                <div className="p-10 bg-white rounded-lg border border-gray-200">
                   <div className="w-12 h-12 bg-amber-700 rounded-full flex items-center justify-center mb-6">
                     <span className="text-white font-bold">①</span>
                   </div>
@@ -60,7 +60,7 @@ export function FeaturesGrid() {
                   </p>
                 </div>
 
-                <div className="p-10 bg-white rounded-lg border border-gray-200 hover:border-slate-300 transition-all hover:shadow-sm">
+                <div className="p-10 bg-white rounded-lg border border-gray-200">
                   <div className="w-12 h-12 bg-amber-700 rounded-full flex items-center justify-center mb-6">
                     <span className="text-white font-bold">②</span>
                   </div>
@@ -70,7 +70,7 @@ export function FeaturesGrid() {
                   </p>
                 </div>
 
-                <div className="p-10 bg-white rounded-lg border border-gray-200 hover:border-slate-300 transition-all hover:shadow-sm">
+                <div className="p-10 bg-white rounded-lg border border-gray-200">
                   <div className="w-12 h-12 bg-amber-700 rounded-full flex items-center justify-center mb-6">
                     <span className="text-white font-bold">③</span>
                   </div>
@@ -80,7 +80,7 @@ export function FeaturesGrid() {
                   </p>
                 </div>
 
-                <div className="p-10 bg-white rounded-lg border border-gray-200 hover:border-slate-300 transition-all hover:shadow-sm">
+                <div className="p-10 bg-white rounded-lg border border-gray-200">
                   <div className="w-12 h-12 bg-amber-700 rounded-full flex items-center justify-center mb-6">
                     <span className="text-white font-bold">④</span>
                   </div>

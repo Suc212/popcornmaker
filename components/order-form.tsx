@@ -193,7 +193,7 @@ export function OrderForm() {
             type="text"
             placeholder="Mensah Mensah"
             {...register('name')}
-            className="w-full px-4 py-2 border border-amber-200 bg-white/95 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+            className="w-full px-4 py-2 border border-amber-200 bg-white/95 rounded-lg transition-colors hover:border-amber-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
           />
           {errors.name && (
             <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>
@@ -208,7 +208,7 @@ export function OrderForm() {
             type="email"
             placeholder="your@email.com"
             {...register('email')}
-            className="w-full px-4 py-2 border border-amber-200 bg-white/95 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+            className="w-full px-4 py-2 border border-amber-200 bg-white/95 rounded-lg transition-colors hover:border-amber-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
           />
           {errors.email && (
             <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>
@@ -223,7 +223,7 @@ export function OrderForm() {
             type="tel"
             placeholder="024 123 4567"
             {...register('phone')}
-            className="w-full px-4 py-2 border border-amber-200 bg-white/95 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+            className="w-full px-4 py-2 border border-amber-200 bg-white/95 rounded-lg transition-colors hover:border-amber-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
           />
           {errors.phone && (
             <p className="text-red-500 text-xs mt-1">{errors.phone.message}</p>
@@ -238,7 +238,7 @@ export function OrderForm() {
             type="tel"
             placeholder="024 123 4567"
             {...register('whatsapp')}
-            className="w-full px-4 py-2 border border-amber-200 bg-white/95 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+            className="w-full px-4 py-2 border border-amber-200 bg-white/95 rounded-lg transition-colors hover:border-amber-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
           />
           {errors.whatsapp && (
             <p className="text-red-500 text-xs mt-1">{errors.whatsapp.message}</p>
@@ -251,7 +251,7 @@ export function OrderForm() {
           </label>
           <select
             {...register('quantity')}
-            className="w-full px-4 py-2 border border-amber-200 bg-white/95 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+            className="w-full px-4 py-2 border border-amber-200 bg-white/95 rounded-lg transition-colors hover:border-amber-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent cursor-pointer"
           >
             <option value="">Choose quantity</option>
             {ORDER_QUANTITY_OPTIONS.map((option) => (
@@ -273,7 +273,7 @@ export function OrderForm() {
             type="text"
             placeholder="Your delivery address"
             {...register('address')}
-            className="w-full px-4 py-2 border border-amber-200 bg-white/95 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+            className="w-full px-4 py-2 border border-amber-200 bg-white/95 rounded-lg transition-colors hover:border-amber-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
           />
           {errors.address && (
             <p className="text-red-500 text-xs mt-1">{errors.address.message}</p>
@@ -302,7 +302,7 @@ export function OrderForm() {
         <Button
           type="submit"
           disabled={loading}
-          className="w-full bg-slate-900 hover:bg-slate-800 text-white font-medium py-2 rounded-lg transition-colors"
+          className="w-full bg-slate-900 hover:bg-slate-800 active:bg-slate-950 text-white font-medium py-2 rounded-lg transition-colors cursor-pointer disabled:cursor-wait"
         >
           {loading ? 'Placing Order...' : 'Place Order'}
         </Button>

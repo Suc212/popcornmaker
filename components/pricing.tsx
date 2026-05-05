@@ -25,7 +25,7 @@ export function Pricing() {
             return (
               <article
                 key={offer.quantity}
-                className={`rounded-2xl border p-6 bg-white transition-all hover:border-slate-300 ${
+                className={`rounded-2xl border p-6 bg-white ${
                   isPopular ? 'border-amber-500 shadow-lg shadow-amber-200/40' : 'border-slate-200'
                 }`}
               >
@@ -51,8 +51,8 @@ export function Pricing() {
 
                 <a
                   href={`?qty=${offer.quantity}#order`}
-                  className={`block w-full px-5 py-3 rounded-lg font-semibold transition-colors text-center ${
-                    isPopular ? 'bg-amber-700 hover:bg-amber-800 text-white' : 'bg-slate-900 text-white hover:bg-slate-800'
+                  className={`block w-full px-5 py-3 rounded-lg font-semibold transition-colors text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 cursor-pointer ${
+                    isPopular ? 'bg-amber-700 hover:bg-amber-800 active:bg-amber-900 focus-visible:ring-amber-500 text-white' : 'bg-slate-900 text-white hover:bg-slate-800 active:bg-slate-950 focus-visible:ring-slate-500'
                   }`}
                 >
                   Order Now
