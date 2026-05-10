@@ -38,7 +38,7 @@ export function Hero() {
               <div className="mb-4 flex items-center justify-center">
                 <div className="w-full max-w-sm sm:max-w-md bg-white rounded-3xl p-5 sm:p-6 border border-amber-100 shadow-xl shadow-amber-200/40">
                   <div className="inline-flex items-center text-xs font-semibold px-3 py-1 rounded-full border border-amber-300 bg-amber-50 mb-4">
-                    4.8 Rating • 2,400+ Reviews
+                    4.8 Rating · 2,400+ Reviews
                   </div>
                   <img
                     src="/images/hero-product.webp"
@@ -56,7 +56,7 @@ export function Hero() {
             </div>
 
             <div className="bg-slate-900 text-white rounded-2xl px-5 py-4 sm:px-8 sm:py-5 text-sm sm:text-base text-center">
-              Join <span className="font-bold">12,000+ happy snackers in Ghana</span> who already own one — 94% say they use it every week.
+              Join <span className="font-bold">12,000+ happy snackers in Ghana</span> who already own one - 94% say they use it every week.
             </div>
           </div>
         </div>

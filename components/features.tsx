@@ -24,8 +24,8 @@ export function Features() {
 
             {/* Right: Feature Details Image */}
             <div className="flex items-center justify-center">
-              <img 
-                src="/images/product-features.jpg" 
+              <img
+                src="/images/product-features.jpg"
                 alt="Product features showing air duct design, non-stick liner, and simple operation"
                 className="w-full h-auto max-w-sm sm:max-w-md lg:max-w-lg object-contain"
               />
@@ -52,7 +52,7 @@ export function FeaturesGrid() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="p-10 bg-white rounded-lg border border-gray-200">
                   <div className="w-12 h-12 bg-amber-700 rounded-full flex items-center justify-center mb-6">
-                    <span className="text-white font-bold">①</span>
+                    <span className="text-white font-bold">1</span>
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">No Oil Needed</h3>
                   <p className="text-gray-600 leading-relaxed">
@@ -62,7 +62,7 @@ export function FeaturesGrid() {
 
                 <div className="p-10 bg-white rounded-lg border border-gray-200">
                   <div className="w-12 h-12 bg-amber-700 rounded-full flex items-center justify-center mb-6">
-                    <span className="text-white font-bold">②</span>
+                    <span className="text-white font-bold">2</span>
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready in 3 Minutes</h3>
                   <p className="text-gray-600 leading-relaxed">
@@ -72,7 +72,7 @@ export function FeaturesGrid() {
 
                 <div className="p-10 bg-white rounded-lg border border-gray-200">
                   <div className="w-12 h-12 bg-amber-700 rounded-full flex items-center justify-center mb-6">
-                    <span className="text-white font-bold">③</span>
+                    <span className="text-white font-bold">3</span>
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Compact and Countertop Friendly</h3>
                   <p className="text-gray-600 leading-relaxed">
@@ -82,7 +82,7 @@ export function FeaturesGrid() {
 
                 <div className="p-10 bg-white rounded-lg border border-gray-200">
                   <div className="w-12 h-12 bg-amber-700 rounded-full flex items-center justify-center mb-6">
-                    <span className="text-white font-bold">④</span>
+                    <span className="text-white font-bold">4</span>
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Easy to Clean</h3>
                   <p className="text-gray-600 leading-relaxed">
@@ -93,8 +93,8 @@ export function FeaturesGrid() {
             </div>
 
           <div className="flex items-center justify-center mt-16">
-            <img 
-              src="/images/product-details-grid.webp" 
+            <img
+              src="/images/product-details-grid.webp"
               alt="Detailed product components and quality"
               className="w-full h-auto max-w-[220px] sm:max-w-xs object-contain"
             />
